@@ -16,7 +16,7 @@ function Form() {
       formData.append('file', file);
 
       try {
-        const res = await axios.post('http://localhost:8000/send', formData, {
+        const res = await axios.post('https://img-back.vercel.app/send', formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Important for file uploads
           },
@@ -46,7 +46,7 @@ function Form() {
       {/* Display the image after uploading */}
       {fileId && (
         <img 
-          src={`http://localhost:8000/file/${fileId}`} 
+          src={`https://img-back.vercel.app/file/${fileId}`} 
           alt="Uploaded file" 
           style={{ marginTop: '20px', width: '300px', height: 'auto' }}
         />
